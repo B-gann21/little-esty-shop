@@ -22,7 +22,7 @@ This project requires Ruby 2.7.4.
 * Clone your fork
 * From the command line, install gems and set up your DB:
     * `bundle`
-    * `rails db:create`
+    * `rails db:{create,migrate}`
 * Run the test suite with `bundle exec rspec`.
 * If you are running the server locally, you must run `rails csv_load:all` to seed the database with Merchants, Items and Invoices
 * Run your development server with `rails s` to see the app in action.
