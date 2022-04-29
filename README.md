@@ -24,9 +24,10 @@ This project requires Ruby 2.7.4.
     * `bundle`
     * `rails db:create`
 * Run the test suite with `bundle exec rspec`.
+* If you are running the server locally, you must run `rails csv_load:all` to seed the database with Merchants, Items and Invoices
 * Run your development server with `rails s` to see the app in action.
 
-### Interaction with this web app is described through the following user stories. They can be performed by visiting [our heroku app](little-etsy-cbac.herokuapp.com), or by running `rails s` in your terminal and navigating to `localhost:3000/{uri}`.
+### Interaction with this web app is described through the following user stories. They can be performed by visiting [our heroku app](little-etsy-cbac.herokuapp.com) and adding `/{uri}` to the end of your url bar, or by running `rails s` in your terminal and navigating to `localhost:3000/{uri}`.
 
 ## Merchants
 
@@ -36,7 +37,7 @@ This project requires Ruby 2.7.4.
 Merchant Dashboard
 
 As a merchant,
-When I visit my merchant dashboard (/merchants/merchant_id/dashboard)
+When I visit my merchant dashboard (example URI: /merchants/50/dashboard)
 Then I see the name of my merchant
 ```
 
@@ -45,8 +46,8 @@ Merchant Dashboard Links
 
 As a merchant,
 When I visit my merchant dashboard
-Then I see link to my merchant items index (/merchants/merchant_id/items)
-And I see a link to my merchant invoices index (/merchants/merchant_id/invoices)
+Then I see link to my merchant items index (example URI: /merchants/50/items)
+And I see a link to my merchant invoices index (example URI: /merchants/50/invoices)
 ```
 
 ```
@@ -89,7 +90,7 @@ And I see that the list is ordered from oldest to newest
 Merchant Items Index Page
 
 As a merchant,
-When I visit my merchant items index page ("merchants/merchant_id/items")
+When I visit my merchant items index page (example URI: merchants/50/items)
 I see a list of the names of all of my items
 And I do not see items for any other merchant
 ```
@@ -99,7 +100,7 @@ Merchant Items Show Page
 
 As a merchant,
 When I click on the name of an item from the merchant items index page,
-Then I am taken to that merchant's item's show page (/merchants/merchant_id/items/item_id)
+Then I am taken to that merchant's item's show page (example URI: /merchants/50/items/1109)
 And I see all of the item's attributes including:
 
 - Name
@@ -188,7 +189,7 @@ When a customer purchases something from the shop, a new invoice will be created
 Merchant Invoices Index
 
 As a merchant,
-When I visit my merchant's invoices index (/merchants/merchant_id/invoices)
+When I visit my merchant's invoices index (example URI: /merchants/50/invoices)
 Then I see all of the invoices that include at least one of my merchant's items
 And for each invoice I see its id
 And each id links to the merchant invoice show page
@@ -198,7 +199,7 @@ And each id links to the merchant invoice show page
 Merchant Invoice Show Page
 
 As a merchant
-When I visit my merchant's invoice show page(/merchants/merchant_id/invoices/invoice_id)
+When I visit my merchant's invoice show page(example URI: /merchants/50/invoices/649)
 Then I see information related to that invoice including:
 - Invoice id
 - Invoice status
@@ -250,7 +251,7 @@ And I see that my Item's status has now been updated
 Admin Dashboard
 
 As an admin,
-When I visit the admin dashboard (/admin)
+When I visit the admin dashboard (example URI: /admin)
 Then I see a header indicating that I am on the admin dashboard
 ```
 
@@ -258,9 +259,9 @@ Then I see a header indicating that I am on the admin dashboard
 Admin Dashboard Links
 
 As an admin,
-When I visit the admin dashboard (/admin)
-Then I see a link to the admin merchants index (/admin/merchants)
-And I see a link to the admin invoices index (/admin/invoices)
+When I visit the admin dashboard (example URI: /admin)
+Then I see a link to the admin merchants index (example URI: /admin/merchants)
+And I see a link to the admin invoices index (example URI: /admin/invoices)
 ```
 
 ```
@@ -311,7 +312,7 @@ Admin Merchant Show
 
 As an admin,
 When I click on the name of a merchant from the admin merchants index page,
-Then I am taken to that merchant's admin show page (/admin/merchants/merchant_id)
+Then I am taken to that merchant's admin show page (example URI: /admin/merchants/50)
 And I see the name of that merchant
 ```
 
